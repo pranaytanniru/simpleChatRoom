@@ -27,7 +27,11 @@ $(function(){
   })
 
   socket.on("typing",(data)=>{
-      feedback.html("<p><i>" + data.username + " is typing.." + "</i></p>")
+      if(data.isTyping){
+        feedback.html("<p><i>" + data.username + " is typing.." + "</i></p>")
+      }else{
+        feedback.html("")
+      }
   })
 
 })
